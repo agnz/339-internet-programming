@@ -1,0 +1,7 @@
+FROM php:7.3-apache
+
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+
+# Use the default development configuration
+RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+
